@@ -60,5 +60,20 @@ public class ReusableMethods {
         return target;
     }
 
+    public static void ekranKaydirma(int pressx, int pressy,int wait, int movex,int movey){
+
+        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
+        action.press(PointOption.point(pressx,pressy))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(wait)))
+                .moveTo(PointOption.point(movex,movey))
+                .release()
+                .perform();
+
+
+
+
+
+    }
+
 
 }

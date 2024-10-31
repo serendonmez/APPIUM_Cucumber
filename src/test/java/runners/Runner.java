@@ -7,10 +7,27 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/FeaturesMobile","src/test/resources/FeatureUi",},
-        glue = "stepdefinitions",
-        tags = "@smoke or @system",
-        dryRun = true
+
+
+        features = "src/test/resources/FeaturesMobile",
+        // features kisminda birden fazla dosya yolu belirtebiliriz bunu {"content root","2.content root"} eklemesi yapilir
+        //örn;
+        // features = {"src/test/resources/FeaturesMobile","src/test/resources/FeatureUi"},
+        glue = "stepdefinitions", // features dosyasinda yazilan sozlu metinlerin kod bolumune aktarildigi yer
+
+
+        tags = "@wip",
+        // calismasini istedigimiz herhangi bir feature ya da seneryo uzerine koydugumuz tag
+        // ile hanginin calisacagina karar veririz bazen 1 den fazla ekleyebiliriz
+        // tags = "@smoke or @system",
+        dryRun = false
+        /* dry run true ise; features da yazilan seneryolar daki eksik adimlar belirlenmesi icin true da calistirilir
+    eksik adimlar olusturuldaktan sonra testin passed olmasi gercek anlamda testimizin passed oldugunu degil
+    eksik adim kalmadigini belirtir
+     */
+        /*
+        false ise; artik eksik adim kalmadiginda testlerimizi kosturmak icin false alir testlerimizi baslatiriz
+         */
 
 
 

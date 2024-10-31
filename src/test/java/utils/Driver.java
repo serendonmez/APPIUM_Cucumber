@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
+
     private static AndroidDriver<AndroidElement> appiumDriver;
     private static IOSDriver<IOSElement> iosDriver;
 
@@ -37,8 +38,9 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-            caps.setCapability("appPackage","com.smartwho.SmartAllCurrencyConverter");
-            caps.setCapability("appActivity","com.smartwho.SmartAllCurrencyConverter.CurrencyConverter");
+           // caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\User\\IdeaProjects\\APPIUM_Cucumber\\Apps\\Aile Bütçem_1.07_apkcombo.com (1).apk");
+            caps.setCapability("appPackage","com.ailebutcem");
+            caps.setCapability("appActivity","com.ailebutcem.MainActivity");
             caps.setCapability(MobileCapabilityType.NO_RESET,false);
             /* eger false olursa; her test baslangicinda kullanici datalari(tercihleri) sifirlanir ve uygulama
             her seferinde ilk yuklendigi haliyle calisir
@@ -49,6 +51,7 @@ public class Driver {
                 assert appiumServerURL != null;
                 appiumDriver = new AndroidDriver<AndroidElement>(appiumServerURL,caps);
                 appiumDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
             }else {
 
                 assert appiumServerURL != null;
@@ -65,11 +68,11 @@ public class Driver {
     }
 
 
-    public static void quitAppiumDriver(){
+    public static void quitAppiumDriver() {
         if (appiumDriver != null) {
             appiumDriver.closeApp();
             appiumDriver = null;
         }
-    }
 
+    }
 }
