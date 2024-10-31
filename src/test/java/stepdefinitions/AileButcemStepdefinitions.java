@@ -34,14 +34,18 @@ public class AileButcemStepdefinitions {
     @Given("sol kisimdaki menuden {string} bolumune gidildigini dogrulayin")
     public void sol_kisimdaki_menuden_hesabim_bolumune_gidildigini_dogrulayin(String hesabim) throws InterruptedException {
     aileButcemPages.solMenuIcerik(hesabim);
-    //
+
+     Thread.sleep(2000);
+     Assert.assertTrue(aileButcemPages.hesabimText.isDisplayed());
+
 
 
     }
-    @Given("Hesabim sayfasindaki bilgileri degistitirerek degisiklikleri kaydedin ve dogrulayin")
-    public void hesabim_sayfasindaki_bilgileri_degistitirerek_degisiklikleri_kaydedin_ve_dogrulayin() throws InterruptedException {
-     Thread.sleep(2000);
-     Assert.assertTrue(aileButcemPages.hesabimText.isDisplayed());
+    @Given("Hesabim sayfasindaki bilgileri degistitirerek {string} {string} {string} {string} {string} degisiklikleri kaydedin ve dogrulayin")
+    public void hesabim_sayfasindaki_bilgileri_degistitirerek_degisiklikleri_kaydedin_ve_dogrulayin(String isim, String soyisim, String sehir, String yas, String meslek) throws InterruptedException {
+
+    aileButcemPages.profilUpdateMethodu(isim, soyisim, sehir, yas, meslek);
+
 
     }
     @Given("Kullanici uygulmayi kapatir")
