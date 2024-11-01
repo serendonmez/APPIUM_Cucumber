@@ -65,6 +65,52 @@ public class AileButcemPages {
     public MobileElement basariliUpdateText;
 
 
+    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
+    public MobileElement aciklama;
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[3]")
+    public MobileElement gelirGiderTipi;
+
+
+    @FindBy(xpath = "(//*[@class='android.widget.ImageView'])[6]")
+    public MobileElement datePicker;
+
+
+
+    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
+    public MobileElement tutar;
+
+    @FindBy(xpath = "(//*[@class='android.widget.ImageView'])[7]")
+    public MobileElement currencyDDM;
+
+
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[4]")
+    public MobileElement gelirPeriyoduDDM;
+
+    @FindBy(xpath = "//*[@resource-id='text2']")
+    public MobileElement GelirBasariylaEklendiText;
+
+@FindBy(xpath = "//*[@content-desc='Next month']")
+public MobileElement nextMonth;
+
+
+
+
+
+    public void tarihSecmeMethodu(int gidilecekAy, String secilecekGun) throws InterruptedException {
+
+
+        for (int i = 0; i <gidilecekAy ; i++) {
+            nextMonth.click();
+            Thread.sleep(1000);
+        }
+        ReusableMethods.scrollWithUiScrollableAndClick(secilecekGun);
+        ReusableMethods.scrollWithUiScrollableAndClick("OK");
+
+
+
+
+
+    }
 
     public void profilUpdateClear() {
         isimBox.clear();

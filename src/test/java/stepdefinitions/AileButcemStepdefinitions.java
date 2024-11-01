@@ -56,4 +56,67 @@ public class AileButcemStepdefinitions {
 
     }
 
+    @Given("Anasayfadaki arti butonuna tiklayin")
+    public void anasayfadaki_arti_butonuna_tiklayin() {
+    ReusableMethods.koordinatTiklamaMethodu(538,2023,500);
+
+    }
+
+    @Given("Gelir Ekle sayfasinda aciklama kismina {string} girilir")
+    public void gelir_ekle_sayfasinda_aciklama_kismina_ikinci_deger_girilir(String deger) {
+     aileButcemPages.aciklama.sendKeys(deger);
+    }
+    @Given("Gelir Ekle sayfasindaki gelir tipi {string} olarak secilir")
+    public void gelir_ekle_sayfasindaki_gelir_tipi_duzenli_olarak_secilir(String gelirTipi) throws InterruptedException {
+     Thread.sleep(1000);
+    aileButcemPages.gelirGiderTipi.click();
+    Thread.sleep(2000);
+    ReusableMethods.scrollWithUiScrollableAndClick(gelirTipi);
+
+    }
+
+
+     @Given("Gelir Periyodu {string} olarak secilir")
+     public void gelir_periyodu_olarak_secilir(String maasPeriyodu) throws InterruptedException {
+     aileButcemPages.gelirPeriyoduDDM.click();
+     Thread.sleep(1000);
+     ReusableMethods.scrollWithUiScrollableAndClick(maasPeriyodu);
+     }
+    @Given("Gelir Ekle sayfasinadaki Kategori Kategori {string} secilir")
+    public void gelir_ekle_sayfasinadaki_kategori_kategori_maas_geliri_secilir(String maasiKategorisi) throws InterruptedException {
+
+     ReusableMethods.scrollWithUiScrollableAndClick("Kategori");
+     Thread.sleep(1000);
+     ReusableMethods.scrollWithUiScrollableAndClick(maasiKategorisi);
+
+
+
+
+
+    }
+    @Given("Gelir Ekle sayfasinda Tarih belirlemesi ay {int} ve gun secimi {string} yapilir")
+    public void gelir_ekle_sayfasinda_tarih_belirlemesi_ve_guncel_secimi_yapilir(int gidilecekAy, String secilecekGun) throws InterruptedException {
+    aileButcemPages.datePicker.click();
+     aileButcemPages.tarihSecmeMethodu(gidilecekAy,secilecekGun);
+
+    }
+    @Given("Gelir Ekle sayfasindaki Tutar bilgisi {string} {string} secilir")
+    public void gelir_ekle_sayfasindaki_tutar_bilgisi_secilir(String tutar,String tutuarBirimi) throws InterruptedException {
+     aileButcemPages.tutar.sendKeys(tutar);
+     aileButcemPages.currencyDDM.click();
+     Thread.sleep(1000);
+     ReusableMethods.scrollWithUiScrollableAndClick(tutuarBirimi);
+
+    }
+    @Given("{string} butonuna text uzerinden tiklanir")
+    public void butonuna_text_uzerinden_tiklanir(String text) {
+    ReusableMethods.scrollWithUiScrollableAndClick(text);
+    }
+    @Given("basariyla eklendigi dogrulanir")
+    public void basariyla_eklendigi_dogrulanir() throws InterruptedException {
+
+     Thread.sleep(2000);
+     Assert.assertTrue(aileButcemPages.GelirBasariylaEklendiText.isDisplayed());
+    }
+
 }
