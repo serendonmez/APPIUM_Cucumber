@@ -40,25 +40,23 @@ public class AileButcemPages {
     public MobileElement hesabimText;
 
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
-    public MobileElement isim;
+    public MobileElement isimBox;
 
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
-    public MobileElement soyisim;
+    public MobileElement soyisimBox;
 
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[3]")
-    public MobileElement sehir;
+    public MobileElement sehirBox;
 
-    @FindBy(xpath = "(//*[@package='com.ailebutcem'])[25]")
-    public MobileElement cinsiyet;
+
 
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[4]")
-    public MobileElement yasim;
+    public MobileElement yasimBox;
 
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[5]")
-    public MobileElement meslegim;
+    public MobileElement meslegimBox;
 
-    @FindBy(xpath = "//*[@text='Erkek']")
-    public MobileElement cinsiyetErkek;
+
 
     @FindBy(xpath = "//*[@text='Kaydet']")
     public MobileElement kaydetButton;
@@ -69,33 +67,33 @@ public class AileButcemPages {
 
 
     public void profilUpdateClear() {
-        isim.clear();
-        soyisim.clear();
-        sehir.clear();
-        yasim.clear();
-        meslegim.clear();
+        isimBox.clear();
+        soyisimBox.clear();
+        sehirBox.clear();
+        yasimBox.clear();
+        meslegimBox.clear();
 
     }
 
-public void profilUpdateMethodu(String isim1, String soyisim1, String sehir1, String yas1, String meslek1){
+public void profilUpdateMethodu(String isim, String soyisim, String sehir, String yas, String meslek){
 
         profilUpdateClear();
 
-        isim.sendKeys(isim1);
-        soyisim.sendKeys(soyisim1);
-        sehir.sendKeys(sehir1);
-        yasim.sendKeys(yas1);
-        meslegim.sendKeys(meslek1);
+        isimBox.sendKeys(ConfigReader.getProperty(isim));
+        soyisimBox.sendKeys(ConfigReader.getProperty(soyisim));
+        sehirBox.sendKeys(ConfigReader.getProperty(sehir));
+        yasimBox.sendKeys(ConfigReader.getProperty(yas));
+        meslegimBox.sendKeys(ConfigReader.getProperty(meslek));
 
         kaydetButton.click();
 
     Assert.assertTrue(basariliUpdateText.isDisplayed());
 
-    Assert.assertEquals(isim.getText(), isim1);
-    Assert.assertEquals(soyisim.getText(), soyisim1);
-    Assert.assertEquals(sehir.getText(), sehir1);
-    Assert.assertEquals(yasim.getText(), yas1);
-    Assert.assertEquals(meslegim.getText(), meslek1);
+    Assert.assertEquals(isimBox.getText(), ConfigReader.getProperty(isim));
+    Assert.assertEquals(soyisimBox.getText(), ConfigReader.getProperty(soyisim));
+    Assert.assertEquals(sehirBox.getText(), ConfigReader.getProperty(sehir) );
+    Assert.assertEquals(yasimBox.getText(), ConfigReader.getProperty(yas));
+    Assert.assertEquals(meslegimBox.getText(), ConfigReader.getProperty(meslek) );
 
 
 

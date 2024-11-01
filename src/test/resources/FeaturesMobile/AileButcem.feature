@@ -12,8 +12,8 @@ Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
     * Hesabim sayfasindaki bilgileri degistitirerek "<isim>" "<soyisim>" "<sehir>" "<yas>" "<meslek>" degisiklikleri kaydedin ve dogrulayin
     * Kullanici uygulmayi kapatir
   Examples:
-   |isim | soyisim| sehir  | yas| meslek|
-    |Mathew |Marshall |New York   |26 | Machine operator |
-    |Roger  |Hazel    | Amsterdam |30 | Hardware engineer|
+    |isim |soyisim |sehir |yas |meslek |
+    |isim1|soyisim1|sehir1|yas1|meslek1|
+    |isim2|soyisim2|sehir2|yas2|meslek2|
 
 
