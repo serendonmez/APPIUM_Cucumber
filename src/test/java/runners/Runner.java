@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         glue = "stepdefinitions", // features dosyasinda yazilan sozlu metinlerin kod bolumune aktarildigi yer
 
 
-        tags = "@wip",
+        tags = "@browser",
         // calismasini istedigimiz herhangi bir feature ya da seneryo uzerine koydugumuz tag
         // ile hanginin calisacagina karar veririz bazen 1 den fazla ekleyebiliriz
         // tags = "@smoke or @system",

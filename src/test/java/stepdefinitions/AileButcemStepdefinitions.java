@@ -1,42 +1,40 @@
 package stepdefinitions;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import pages.AileButcemPages;
+import pages.AileButcemPage;
 import utils.Driver;
 import utils.ReusableMethods;
 
 public class AileButcemStepdefinitions {
 
-   AileButcemPages aileButcemPages=new AileButcemPages();
+   AileButcemPage aileButcemPage=new AileButcemPage();
 
 
     @Given("ilk ekran ayarlamalarini yapin {int} {int} {int} {int} {int} ve ardindan login sayfasina {string} a ulasin")
     public void ilk_ekran_ayarlamalarini_yapin_ve_ardindan_login_sayfasina_girisyap_a_ulasin(int x, int y, int wait, int moveX, int moveY, String girisYap) throws InterruptedException {
-    aileButcemPages.ilkEkranAyarlari(x,y,wait,moveX, moveY, girisYap);
+    aileButcemPage.ilkEkranAyarlari(x,y,wait,moveX, moveY, girisYap);
     Thread.sleep(1000);
 
     }
     @Given("{string} ve {string} bilgilerini girerek kullanici bilgileri ile {string} a tiklar")
     public void mail_ve_sifre_bilgilerini_girerek_kullanici_bilgileri_ile_giris_yapin(String mail, String sifre, String girisYap) {
 
-     aileButcemPages.loginMethodu(mail, sifre, girisYap);
+     aileButcemPage.loginMethodu(mail, sifre, girisYap);
 
 
     }
     @Given("uygulmaya kullanici bilgileri ile giris yapildigini dogrulayin")
     public void uygulmaya_kullanici_bilgileri_ile_giris_yapildigini_dogrulayin() {
-     Assert.assertTrue(aileButcemPages.basariliGiris.isDisplayed());
+     Assert.assertTrue(aileButcemPage.basariliGiris.isDisplayed());
 
     }
     @Given("sol kisimdaki menuden {string} bolumune gidildigini dogrulayin")
     public void sol_kisimdaki_menuden_hesabim_bolumune_gidildigini_dogrulayin(String hesabim) throws InterruptedException {
-    aileButcemPages.solMenuIcerik(hesabim);
+    aileButcemPage.solMenuIcerik(hesabim);
 
      Thread.sleep(2000);
-     Assert.assertTrue(aileButcemPages.hesabimText.isDisplayed());
+     Assert.assertTrue(aileButcemPage.hesabimText.isDisplayed());
 
 
 
@@ -44,7 +42,7 @@ public class AileButcemStepdefinitions {
     @Given("Hesabim sayfasindaki bilgileri degistitirerek {string} {string} {string} {string} {string} degisiklikleri kaydedin ve dogrulayin")
     public void hesabim_sayfasindaki_bilgileri_degistitirerek_degisiklikleri_kaydedin_ve_dogrulayin(String isim, String soyisim, String sehir, String yas, String meslek) throws InterruptedException {
 
-    aileButcemPages.profilUpdateMethodu(isim, soyisim, sehir, yas, meslek);
+    aileButcemPage.profilUpdateMethodu(isim, soyisim, sehir, yas, meslek);
 
 
     }
@@ -64,12 +62,12 @@ public class AileButcemStepdefinitions {
 
     @Given("Gelir Ekle sayfasinda aciklama kismina {string} girilir")
     public void gelir_ekle_sayfasinda_aciklama_kismina_ikinci_deger_girilir(String deger) {
-     aileButcemPages.aciklama.sendKeys(deger);
+     aileButcemPage.aciklama.sendKeys(deger);
     }
     @Given("Gelir Ekle sayfasindaki gelir tipi {string} olarak secilir")
     public void gelir_ekle_sayfasindaki_gelir_tipi_duzenli_olarak_secilir(String gelirTipi) throws InterruptedException {
      Thread.sleep(1000);
-    aileButcemPages.gelirGiderTipi.click();
+    aileButcemPage.gelirGiderTipi.click();
     Thread.sleep(2000);
     ReusableMethods.scrollWithUiScrollableAndClick(gelirTipi);
 
@@ -78,7 +76,7 @@ public class AileButcemStepdefinitions {
 
      @Given("Gelir Periyodu {string} olarak secilir")
      public void gelir_periyodu_olarak_secilir(String maasPeriyodu) throws InterruptedException {
-     aileButcemPages.gelirPeriyoduDDM.click();
+     aileButcemPage.gelirPeriyoduDDM.click();
      Thread.sleep(1000);
      ReusableMethods.scrollWithUiScrollableAndClick(maasPeriyodu);
      }
@@ -96,14 +94,14 @@ public class AileButcemStepdefinitions {
     }
     @Given("Gelir Ekle sayfasinda Tarih belirlemesi ay {int} ve gun secimi {string} yapilir")
     public void gelir_ekle_sayfasinda_tarih_belirlemesi_ve_guncel_secimi_yapilir(int gidilecekAy, String secilecekGun) throws InterruptedException {
-    aileButcemPages.datePicker.click();
-     aileButcemPages.tarihSecmeMethodu(gidilecekAy,secilecekGun);
+    aileButcemPage.datePicker.click();
+     aileButcemPage.tarihSecmeMethodu(gidilecekAy,secilecekGun);
 
     }
     @Given("Gelir Ekle sayfasindaki Tutar bilgisi {string} {string} secilir")
     public void gelir_ekle_sayfasindaki_tutar_bilgisi_secilir(String tutar,String tutuarBirimi) throws InterruptedException {
-     aileButcemPages.tutar.sendKeys(tutar);
-     aileButcemPages.currencyDDM.click();
+     aileButcemPage.tutar.sendKeys(tutar);
+     aileButcemPage.currencyDDM.click();
      Thread.sleep(1000);
      ReusableMethods.scrollWithUiScrollableAndClick(tutuarBirimi);
 
@@ -116,7 +114,7 @@ public class AileButcemStepdefinitions {
     public void basariyla_eklendigi_dogrulanir() throws InterruptedException {
 
      Thread.sleep(2000);
-     Assert.assertTrue(aileButcemPages.GelirBasariylaEklendiText.isDisplayed());
+     Assert.assertTrue(aileButcemPage.GelirBasariylaEklendiText.isDisplayed());
     }
 
 }
