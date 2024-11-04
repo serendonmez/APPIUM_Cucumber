@@ -16,7 +16,7 @@ public class Driver {
     private static AndroidDriver<AndroidElement> appiumDriver;
     private static IOSDriver<IOSElement> iosDriver;
 
-    static final String TELEFONADI="Pixel 4";
+    static final String TELEFONADI="ALFA 8SM";
     static final String ANDROIDVERSION="10.0";
     static final String PLATFORM="Android";
     static final String OTOMASYON_ISMI="UiAutomator2";
@@ -38,7 +38,7 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-           // caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\User\\IdeaProjects\\APPIUM_Cucumber\\Apps\\Aile Bütçem_1.07_apkcombo.com (1).apk");
+            // caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\User\\IdeaProjects\\APPIUM_Cucumber\\Apps\\Aile Bütçem_1.07_apkcombo.com (1).apk");
             caps.setCapability("appPackage","com.ailebutcem");
             caps.setCapability("appActivity","com.ailebutcem.MainActivity");
             caps.setCapability(MobileCapabilityType.NO_RESET,false);

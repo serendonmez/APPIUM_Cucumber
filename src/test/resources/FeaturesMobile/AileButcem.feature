@@ -3,11 +3,11 @@
 Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
 
   Background: Sisteme giris yapilmasi iicn gereken ortak adimlar
-    * ilk ekran ayarlamalarini yapin 937 1479 2000 147 1479 ve ardindan login sayfasina "Giriş Yap" a ulasin
+    * ilk ekran ayarlamalarini yapin 655 1067 2000 95 1067 ve ardindan login sayfasina "Giriş Yap" a ulasin
     * "mail" ve "password" bilgilerini girerek kullanici bilgileri ile "Giriş Yap" a tiklar
     * uygulmaya kullanici bilgileri ile giris yapildigini dogrulayin
 
-
+  @wip
   Scenario Outline:Kullanici aile butcem uygulamasindaki hesabim bolumundeki degisiklikleri dogrular
 
 
@@ -19,7 +19,7 @@ Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
     |isim1|soyisim1|sehir1|yas1|meslek1|
     |isim2|soyisim2|sehir2|yas2|meslek2|
 
-  @wip
+
   Scenario: Aile butcem uygulamasindaki gelir ekleme gorevleri yerine getirilir
 
   * Anasayfadaki arti butonuna tiklayin

@@ -178,7 +178,7 @@ public void profilUpdateMethodu(String isim, String soyisim, String sehir, Strin
 
         Thread.sleep(3000);
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 9; i++) {
 
 
             ReusableMethods.ekranKaydirma(xPress, yPress, wait, xMove, yMove);
